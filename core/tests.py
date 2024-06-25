@@ -16,7 +16,7 @@ for i in  Type.objects.filter(name__startswith='P'):
     print(i.id)
     #Insert
 t = Type()
-t.name = 'Gobernador'
+t.name = 'Funciono'
 t.save()
     #Update
 # try:
