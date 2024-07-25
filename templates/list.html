@@ -1,0 +1,40 @@
+{% extends 'body.html' %}
+
+{% block content %}
+    <div class="card">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div class="card-header">
+
+            <h3 class="card-title">
+                <i class="fa-duotone fa-solid fa-magnifying-glass-plus"></i>
+                {{ title }}
+            </h3>
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                {% block columns %}
+
+                {% endblock %}
+
+                </thead>
+                <tbody>
+                {% block rows %}
+
+                {% endblock %}
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-flat">
+                <i class="fa-solid fa-plus"></i>Nuevo resgistro
+            </button>
+        </div>
+
+    </div>
+
+{% endblock %}
