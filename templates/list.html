@@ -1,5 +1,15 @@
 {% extends 'body.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/css/dataTables.bootstrap4.min.css' %}"/>
+    <link rel="stylesheet"
+          href="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap4.min.css' %}"/>
+    <script src="{% static 'lib/datatables-1.10.20/js/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/responsive.bootstrap4.min.js' %}"></script>
 
+{% endblock %}
 {% block content %}
     <div class="card">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,7 +23,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table">
+            <table class="table" id="data">
                 <thead>
                 {% block columns %}
 
@@ -30,11 +40,34 @@
             </table>
         </div>
         <div class="card-footer">
-            <button class="btn btn-primary btn-flat">
+            <button class="btn btn-primary btn-flat" id="Test">
                 <i class="fa-solid fa-plus"></i>Nuevo resgistro
             </button>
         </div>
 
     </div>
-
+{% endblock %}
+{% block JavaScript %}
+    <script> type="application/javascript">
+        $(document).ready(function () {
+            $('#data').DataTable(
+                {
+                    responsive: true,
+                    autoWidth: false
+                 });
+            $('#Test').on('click', function () {
+                $.ajax({
+                    url: '{% url 'core:category_list' %}',
+                    type: 'POST',
+                    data: {id: 2},
+                    datatype: 'json'
+                }).done(function (data) {
+                    console.log(data)
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus+':'+ errorThrown);
+                }).always(function (data) {
+                });
+             });
+        });
+    </script>
 {% endblock %}

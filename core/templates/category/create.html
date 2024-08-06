@@ -1,0 +1,29 @@
+{% extends 'body.html' %}
+
+{% block content %}
+    <form method="post" action=".">
+    <div class="card">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div class="card-header">
+
+            <h3 class="card-title">
+                <i class="fa-plus fa-solid fa-magnifying-glass-plus"></i>
+                {{ title }}
+            </h3>
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div class="card-body">
+            {% csrf_token %}
+            {{ form.as_ul }}
+        </div>
+        <div class="card-footer">
+            <button type="submit" class= "btn btn-primary btn-flat">
+                <i class="fa-solid fa-save"></i> Guardar resgistro
+            </button>
+        </div>
+
+    </div>
+    </form>
+
+{% endblock %}
