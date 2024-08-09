@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f93e6601-a903-430e-ace8-ea634d4766b1" name="Changes" comment="" />
+    <list default="true" id="f93e6601-a903-430e-ace8-ea634d4766b1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75fcf584-edc9-46c2-b48e-d28053d65fe7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75fcf584-edc9-46c2-b48e-d28053d65fe7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/category/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/category/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/category/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/category/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,12 +43,15 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Django Server.djangoProject.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Profiler&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jesus/OneDrive/Documentos/GitHub/djangoProject&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jesus/OneDrive/Documentos/GitHub/Django5/core&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -49,7 +61,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jesus\OneDrive\Documentos\GitHub\Django5\core" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.djangoProject">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python">
       <module name="djangoProject" />
       <option name="ENV_FILES" value="" />
@@ -140,6 +157,25 @@
       <workItem from="1719211920491" duration="45000" />
       <workItem from="1719211995957" duration="42000" />
       <workItem from="1719212065890" duration="273000" />
+      <workItem from="1719212606067" duration="29000" />
+      <workItem from="1719294712982" duration="1262000" />
+      <workItem from="1719296117215" duration="2024000" />
+      <workItem from="1719545956766" duration="2937000" />
+      <workItem from="1719724774525" duration="3731000" />
+      <workItem from="1719894648126" duration="653000" />
+      <workItem from="1719899470426" duration="2146000" />
+      <workItem from="1720075391445" duration="2676000" />
+      <workItem from="1721854222791" duration="4586000" />
+      <workItem from="1721880485784" duration="8641000" />
+      <workItem from="1721952426125" duration="2657000" />
+      <workItem from="1722289885781" duration="6160000" />
+      <workItem from="1722495332688" duration="3858000" />
+      <workItem from="1722499487676" duration="1416000" />
+      <workItem from="1722500939004" duration="2694000" />
+      <workItem from="1722906659178" duration="3081000" />
+      <workItem from="1722922535441" duration="62000" />
+      <workItem from="1723164416706" duration="3869000" />
+      <workItem from="1723168362976" duration="717000" />
     </task>
     <servers />
   </component>
@@ -147,6 +183,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Django5$tests.coverage" NAME="tests Coverage Results" MODIFIED="1722500419360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/Django5$test.coverage" NAME="test Coverage Results" MODIFIED="1722500086513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/djangoProject$test.coverage" NAME="test Coverage Results" MODIFIED="1719212153598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
