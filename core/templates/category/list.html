@@ -1,29 +1,36 @@
 {% extends 'list.html' %}
+{% load static %}
+
+{% block head_list %}
+    <script src="{% static 'category/js/list.js' %}"></script>
+{% endblock %}
 
 {% block columns %}
     <tr>
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
         <th scope="col">Opciones</th>
     </tr>
 {% endblock %}
 
 {% block rows %}
-    {% for c in object_list %}
-        <tr>
-            <td>{{ c.id }}</td>
-            <td>{{ c.name }}</td>
-            <td>
-                <button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-            </td>
 
-        </tr>
-    {% endfor %}
-
-
+{#        {% for c in object_list %}#}
+{#            <tr>#}
+{#                <td>{{ c.id }}</td>#}
+{#                <td>{{ c.name }}</td>#}
+{#                <td>#}
+{#                    <a href="{% url 'core:category_update' c.id %}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>#}
+{#                    <a href="{% url 'core:category_delete' c.id %}" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>#}
+{#                </td>#}
+{##}
+{#            </tr>#}
+{#        {% endfor %}#}
 {% endblock %}
 
+{% block JavaScript %}
+
+{% endblock %}
 
 

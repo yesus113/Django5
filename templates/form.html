@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <form method="post" action=".">
+        <div class="card">
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <div class="card-header">
+
+                <h3 class="card-title">
+                    {% if action == 'add' %}
+                        <i class="fa-plus fa-solid fa-magnifying-glass-plus"></i>
+                    {% else %}
+                         <i class="fa-pen fa-solid fa-magnifying-glass-plus"></i>
+                    {% endif %}
+
+                    {{ title }}
+                </h3>
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="card-body">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="{{ action }}">
+                {% for field in form.visible_fields %}
+                    <div class="form-group">
+                        <label for="Category">
+                            {{ field.label }}
+                        </label>
+                        {{ field|attr:"class:form-control" }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-flat">
+                    <i class="fa-solid fa-save"></i> Guardar resgistro
+                </button>
+            </div>
+
+        </div>
+    </form>
+    <script>
+        {% if form.errors %}
+            var errors = ''
+            {% for field in form %}
+                {% for error in field.errors %}
+                    errors += '{{ error }}\n'
+                {% endfor %}
+            {% endfor %}
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: errors
+            });
+        {% endif %}
+
+        /*  $('form').on('submit', function (e) {
+              e.preventDefault();
+              var parameters = $(this).serializeArray();
+              $.ajax({
+                  url: '{% url 'core:category_create' %}',
+                type: 'POST',
+                data: parameters,
+                datatype: 'json'
+            }).done(function (data) {
+                if (!data.hasOwnProperty('error')) {
+                    location.href = '{{ list_url }}';
+                    return false;
+                }
+
+                message_error(data.error);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus + ':' + errorThrown);
+            }).always(function (data) {
+            });
+        });*/
+    </script>
+
+{% endblock %}

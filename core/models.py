@@ -9,6 +9,7 @@ from core.choices import gender_choices
 
 class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name='Nombre', unique=True)
+    desc = models.CharField(max_length=500, null=True, blank=True, verbose_name='Descripcion')
 
     def __str__(self):
         return 'Nombre: {}'.format(self.name)
@@ -16,6 +17,7 @@ class Category(models.Model):
     def toJSON(self):
         item = model_to_dict(self)
         return item
+
     class Meta:
         verbose_name = 'Categoria'
         verbose_name_plural = 'Categorias'
@@ -83,4 +85,40 @@ class DetSale(models.Model):
     class Meta:
         verbose_name = 'Detalle de Venta'
         verbose_name_plural = 'Detalle de Ventas'
+        ordering = ['id']
+
+class Procesos(models.Model):
+    NO_INICIADO = 'NI'
+    EN_PROCESO = 'EP'
+    TERMINADO = 'TE'
+
+    ESTADO_CHOICES = [
+            (NO_INICIADO, 'No Iniciado'),
+            (EN_PROCESO, 'En proceso'),
+            (TERMINADO, 'Terminado'),
+    ]
+    name = models.CharField(max_length=150, verbose_name='Nombre del proceso')
+    fechaInicio = models.DateField(default=datetime.now, verbose_name='Fecha de Inicio')
+    fechaFin = models.DateField(default=datetime.now, verbose_name='Fecha de Fin')
+    estado = models.CharField(max_length=2, choices=ESTADO_CHOICES, default=NO_INICIADO)
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = 'proceso'
+        verbose_name_plural = 'Procesos'
+        ordering = ['id']
+
+class Medicion(models.Model):
+
+    date = models.DateField(default=datetime.now, verbose_name='Fecha')
+    temp = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+    OD = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+    PH = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+    oz = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+    proceso = models.ForeignKey(Procesos, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.proceso.name
+    class Meta:
+        verbose_name = 'medicion'
+        verbose_name_plural = 'Mediciones'
         ordering = ['id']
