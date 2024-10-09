@@ -4,45 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f93e6601-a903-430e-ace8-ea634d4766b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/static/category/js/list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/category/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/dashboard/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/medicion/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/medicion/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/proceso/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/proceso/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/views/dashboard/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/views/medicion/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/views/proceso/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homepage/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homepage/template/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homepage/template/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/funtions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/hzt/body.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/hzt/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vtc/body.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vtc/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vtc/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/djangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProject.iml" afterDir="false" />
+    <list default="true" id="f93e6601-a903-430e-ace8-ea634d4766b1" name="Changes" comment="Video 35&#10;&#10;CreateView-Modificar el formulario">
+      <change afterPath="$PROJECT_DIR$/home/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/category/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/category/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/category/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/dashboard/dashboard2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/views/category/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/category/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/dashboard/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/dashboard/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/medicion/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/proceso/view.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/body.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/static/sensores/js/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage/template/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage/template/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/sensores/dht11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/funtions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/funtions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vtc/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vtc/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vtc/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vtc/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vtc/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vtc/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -77,19 +67,22 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Django Server.djangoProject.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: homepage.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Profiler&quot;,
     &quot;Python.tests.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jesus/OneDrive/Documentos/GitHub/Django5/core&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -99,6 +92,27 @@
     </key>
   </component>
   <component name="RunManager" selected="Django Server.djangoProject">
+    <configuration name="Test: homepage" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="djangoProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="homepage" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python">
       <module name="djangoProject" />
       <option name="ENV_FILES" value="" />
@@ -150,8 +164,14 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.djangoProject" />
+      <item itemvalue="Django tests.Test: homepage" />
       <item itemvalue="Python.test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: homepage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -225,15 +245,136 @@
       <workItem from="1723758400530" duration="7653000" />
       <workItem from="1723841552026" duration="2803000" />
       <workItem from="1723844411177" duration="363000" />
+      <workItem from="1723845759178" duration="4165000" />
+      <workItem from="1723872305742" duration="553000" />
+      <workItem from="1723944355222" duration="1523000" />
+      <workItem from="1724189871177" duration="1469000" />
+      <workItem from="1724285397763" duration="6703000" />
+      <workItem from="1724378011352" duration="3851000" />
+      <workItem from="1724388767517" duration="3589000" />
+      <workItem from="1724642014038" duration="1873000" />
+      <workItem from="1724643977078" duration="2797000" />
+      <workItem from="1724784063998" duration="285000" />
+      <workItem from="1724865548120" duration="120000" />
+      <workItem from="1724866271989" duration="9000" />
+      <workItem from="1727914076142" duration="441000" />
+      <workItem from="1728073739949" duration="10000" />
+      <workItem from="1728161233880" duration="5000" />
+      <workItem from="1728163050233" duration="1572000" />
+      <workItem from="1728165216680" duration="2730000" />
+      <workItem from="1728171643537" duration="23000" />
+      <workItem from="1728172165279" duration="1070000" />
+      <workItem from="1728175564096" duration="5234000" />
+      <workItem from="1728192685434" duration="11801000" />
+      <workItem from="1728228084966" duration="8515000" />
+      <workItem from="1728236788755" duration="437000" />
+      <workItem from="1728237295024" duration="1347000" />
+      <workItem from="1728238792420" duration="4214000" />
+      <workItem from="1728243120875" duration="1379000" />
+      <workItem from="1728244545816" duration="372000" />
+      <workItem from="1728244996000" duration="400000" />
+      <workItem from="1728278058640" duration="13000" />
+      <workItem from="1728348322855" duration="642000" />
+      <workItem from="1728364182226" duration="12572000" />
+      <workItem from="1728377015608" duration="281000" />
+      <workItem from="1728406104125" duration="2851000" />
+      <workItem from="1728425492890" duration="2768000" />
+      <workItem from="1728433585521" duration="686000" />
+      <workItem from="1728434291650" duration="988000" />
+      <workItem from="1728452391217" duration="6158000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:prettier" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:vite" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:cypress" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="097f7368-4785-432a-8046-3b191ceeeb75" value="TOOL_WINDOW" />
+        <entry key="587f21f1-457f-4d54-9492-f735c445e7db" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="097f7368-4785-432a-8046-3b191ceeeb75">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/jesus/OneDrive/Documentos/GitHub/Django5/home" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="587f21f1-457f-4d54-9492-f735c445e7db">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/jesus/OneDrive/Documentos/GitHub/Django5/home/templates" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Video 27&#10;&#10;CreateView-Modificar el formulario" />
+    <MESSAGE value="Video 35&#10;&#10;CreateView-Modificar el formulario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Video 35&#10;&#10;CreateView-Modificar el formulario" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Django5$tests.coverage" NAME="tests Coverage Results" MODIFIED="1722500419360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/Django5$test.coverage" NAME="test Coverage Results" MODIFIED="1722500086513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Django5$Test__homepage.coverage" NAME="Test: homepage Coverage Results" MODIFIED="1724190231490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/djangoProject$test.coverage" NAME="test Coverage Results" MODIFIED="1719212153598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

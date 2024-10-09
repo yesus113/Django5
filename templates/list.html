@@ -1,4 +1,4 @@
-{% extends 'hzt/body.html' %}
+{% extends 'vtc/body.html' %}
 {% load static %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/css/dataTables.bootstrap4.min.css' %}">
@@ -47,6 +47,9 @@
             <a href="{{ create_url }}" class="btn btn-primary btn-flat btnTest">
                 <i class="fa-solid fa-plus"></i>Nuevo resgistro
             </a>
+            <a href="{{ list_url }}" class="btn btn-success btn-flat">
+                <i class="fas fa-sync"></i> Actualizar
+            </a>
         </div>
 
     </div>
@@ -62,6 +65,7 @@
             $('.btnTest').on('click', function () {
                 /*  $.ajax({
                       url: '
+
                 {% url 'core:category_list' %}',
                     type: 'POST',
                     data: {id: 1},
@@ -69,6 +73,7 @@
                 }).done(function (data) {
                     console.log(data)
                 }).fail(function (jqXHR, textStatus, errorThrown) {
+
 
                 {#alert(textStatus + '='+ errorThrown);#}
                 }).always(function (data) {

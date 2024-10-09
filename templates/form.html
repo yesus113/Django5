@@ -12,7 +12,7 @@
                     {% if action == 'add' %}
                         <i class="fa-plus fa-solid fa-magnifying-glass-plus"></i>
                     {% else %}
-                         <i class="fa-pen fa-solid fa-magnifying-glass-plus"></i>
+                        <i class="fa-pen fa-solid fa-magnifying-glass-plus"></i>
                     {% endif %}
 
                     {{ title }}
@@ -35,6 +35,9 @@
                 <button type="submit" class="btn btn-primary btn-flat">
                     <i class="fa-solid fa-save"></i> Guardar resgistro
                 </button>
+                <a href="{{ list_url }}" class="btn btn-danger btn-flat">
+                    <i class="fas fa-times"></i> Cancelar
+                </a>
             </div>
 
         </div>
@@ -53,6 +56,11 @@
                 text: errors
             });
         {% endif %}
+
+        {#$('form').on('submit', function (e) {#}
+        {#    Alert_JQueryConfirm();#}
+        {#});#}
+
 
         /*  $('form').on('submit', function (e) {
               e.preventDefault();
@@ -74,6 +82,7 @@
             }).always(function (data) {
             });
         });*/
+
     </script>
 
 {% endblock %}

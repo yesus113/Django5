@@ -1,5 +1,6 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timezone
+from django.utils import timezone
 from django.forms import model_to_dict
 
 # Create your models here.
@@ -87,38 +88,53 @@ class DetSale(models.Model):
         verbose_name_plural = 'Detalle de Ventas'
         ordering = ['id']
 
-class Procesos(models.Model):
-    NO_INICIADO = 'NI'
-    EN_PROCESO = 'EP'
-    TERMINADO = 'TE'
 
-    ESTADO_CHOICES = [
-            (NO_INICIADO, 'No Iniciado'),
-            (EN_PROCESO, 'En proceso'),
-            (TERMINADO, 'Terminado'),
-    ]
-    name = models.CharField(max_length=150, verbose_name='Nombre del proceso')
-    fechaInicio = models.DateField(default=datetime.now, verbose_name='Fecha de Inicio')
-    fechaFin = models.DateField(default=datetime.now, verbose_name='Fecha de Fin')
-    estado = models.CharField(max_length=2, choices=ESTADO_CHOICES, default=NO_INICIADO)
+# class Procesos(models.Model):
+#     NO_INICIADO = 'NI'
+#     EN_PROCESO = 'EP'
+#     TERMINADO = 'TE'
+#
+#     ESTADO_CHOICES = [
+#             (NO_INICIADO, 'No Iniciado'),
+#             (EN_PROCESO, 'En proceso'),
+#             (TERMINADO, 'Terminado'),
+#     ]
+#     name = models.CharField(max_length=150, verbose_name='Nombre del proceso')
+#     fechaInicio = models.DateField(default=datetime.now, verbose_name='Fecha de Inicio')
+#     fechaFin = models.DateField(default=datetime.now, verbose_name='Fecha de Fin')
+#     estado = models.CharField(max_length=2, choices=ESTADO_CHOICES, default=NO_INICIADO)
+#     def __str__(self):
+#         return self.name
+#     class Meta:
+#         verbose_name = 'proceso'
+#         verbose_name_plural = 'Procesos'
+#         ordering = ['id']
+
+# class Medicion(models.Model):
+#
+#     date = models.DateField(default=datetime.now, verbose_name='Fecha')
+#     temp = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+#     OD = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+#     PH = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+#     oz = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
+#     proceso = models.ForeignKey(Procesos, on_delete=models.CASCADE)
+#     def __str__(self):
+#         return self.proceso.name
+#     class Meta:
+#         verbose_name = 'medicion'
+#         verbose_name_plural = 'Mediciones'
+#         ordering = ['id']
+
+class SensorData(models.Model):
+    temperature = models.FloatField()
+    humidity = models.FloatField()
+    datetime = models.DateTimeField(default=timezone.now)
+
     def __str__(self):
-        return self.name
-    class Meta:
-        verbose_name = 'proceso'
-        verbose_name_plural = 'Procesos'
-        ordering = ['id']
+        return f"Temperature: {self.temperature}, Humidity: {self.humidity}"
 
-class Medicion(models.Model):
-
-    date = models.DateField(default=datetime.now, verbose_name='Fecha')
-    temp = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
-    OD = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
-    PH = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
-    oz = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
-    proceso = models.ForeignKey(Procesos, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.proceso.name
-    class Meta:
-        verbose_name = 'medicion'
-        verbose_name_plural = 'Mediciones'
-        ordering = ['id']
+    def toJSON(self):
+        item = model_to_dict(self)
+        # Convierte datetime a un formato legible (ISO)
+        item['datetime'] = self.datetime.isoformat()  # O puedes usar str(self.datetime) si prefieres
+        return item

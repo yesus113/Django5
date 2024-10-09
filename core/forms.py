@@ -1,5 +1,5 @@
 from django.forms import *
-from core.models import Category, Procesos
+from core.models import Category
 
 
 class CategoryForm(ModelForm):
@@ -36,24 +36,6 @@ class ProcesoForm(ModelForm):
         #     form.field.widget.attrs['class'] = 'form-control'
         self.fields['name'].widget.attrs ['autofocus'] = True
 
-    class Meta:
-        model = Procesos
-        fields = '__all__'
-        widgets = {
-            'name': TextInput(
-                attrs={
-                    'placeholder': 'Category Name',
-                    'autofocus': 'true'
-                }
-            ),
-            'desc': Textarea(
-                attrs={
-                    'rows': 3,
-                    'cols': 6,
-                }
-            )
-
-        }
 
     # def save(self, commit=True):
     #     data = {}
