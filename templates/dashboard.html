@@ -1,6 +1,12 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block head %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="{% static 'lib/Highcharts-11.4.6/code/highcharts.js' %}"></script>
     <script src="{% static 'lib/Highcharts-11.4.6/code/highcharts-more.js' %}"></script>
     <script src="{% static 'lib/Highcharts-11.4.6/code/modules/solid-gauge.js' %}"></script>
@@ -304,7 +310,7 @@
                                 if (!data.hasOwnProperty('error')) {
                                     var x = (new Date()).getTime();
                                     var y = data.y;
-                                    series.addPoint([x,y], true, true);
+                                    series.addPoint([x, y], true, true);
                                     return false;
                                 }
                             });
