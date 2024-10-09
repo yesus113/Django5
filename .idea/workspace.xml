@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f93e6601-a903-430e-ace8-ea634d4766b1" name="Changes" comment="Video 35&#10;&#10;CreateView-Modificar el formulario">
-      <change afterPath="$PROJECT_DIR$/home/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/dashboard/dashboard2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/category/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/category/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/dashboard/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/dashboard/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/medicion/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/proceso/view.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/static/sensores/js/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage/template/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage/template/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/sensores/dht11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/funtions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/funtions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vtc/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vtc/body.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vtc/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vtc/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vtc/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vtc/sidebar.html" afterDir="false" />
-    </list>
+    <list default="true" id="f93e6601-a903-430e-ace8-ea634d4766b1" name="Changes" comment="Video 35&#10;&#10;CreateView-Modificar el formulario" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -281,7 +252,7 @@
       <workItem from="1728425492890" duration="2768000" />
       <workItem from="1728433585521" duration="686000" />
       <workItem from="1728434291650" duration="988000" />
-      <workItem from="1728452391217" duration="6158000" />
+      <workItem from="1728452391217" duration="6520000" />
     </task>
     <servers />
   </component>
