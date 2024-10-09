@@ -34,7 +34,7 @@ SECRET_KEY = env('SECRET_KEY')
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
-    DEBUG = True
+    DEBUG = False
 
 ALLOWED_HOSTS = ['192.168.122.38', '192.168.1.130', 'localhost', '127.0.0.1', 'uv-check.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://uv-check.up.railway.app']
@@ -137,7 +137,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
