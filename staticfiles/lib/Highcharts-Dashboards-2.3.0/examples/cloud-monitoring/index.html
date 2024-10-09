@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="./demo.css">
+</head>
+<body>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.src.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.src.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.src.js"></script>
+<script src="../../code/datagrid.src.js"></script>
+<script src="../../code/dashboards.src.js"></script>
+<script src="../../code/modules/layout.src.js"></script>
+
+<div class="cloud-monitoring-dashboard-container">
+  <div class="cloud-monitoring-data-controls">
+    <label for="enablePolling">
+      <input type="checkbox" id="enablePolling" name="enablePolling" />
+      <span>Enable data polling</span>
+    </label>
+  </div>
+  <div id="container"></div>
+</div>
+<p class="highcharts-description">
+  The demo shows how you can visualize AWS server data on a dashboard.
+</p>
+<p class="highcharts-description">
+  In the Dashboard, you can find a few HTML Components that describe an
+  instance, some charts (KPI and Spline charts) that visualize data parts, and
+  the list of all instances (DataGrid). Click on an instance in the DataGrid to
+  update the Dashboard. If you enable polling, the data on charts will be live
+  updated each 2 seconds.
+</p>
+
+<script src="./demo.js"></script>
+</body>
+</html>

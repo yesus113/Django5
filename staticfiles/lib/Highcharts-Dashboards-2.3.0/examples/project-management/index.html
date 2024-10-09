@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="./demo.css">
+</head>
+<body>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script src="https://code.highcharts.com/gantt/modules/gantt.src.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.src.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.src.js"></script>
+<script src="../../code/dashboards.src.js"></script>
+<script src="../../code/modules/layout.src.js"></script>
+
+<div class="dashboard-header">
+    <h2 class="dashboard-title" >Project management dashboard</h2>
+    <p class="dashboard-description">Current progress in <b>week 22</b></p>
+</div>
+<div id="container">
+    <div class="row">
+        <div class="cell" id="current-sprint-kpi">
+            <div class="row" id="current-sprint">
+                <div class="cell" id="dashboard-kpi-1"></div>
+                <div class="cell" id="dashboard-kpi-2"></div>
+            </div>
+        </div>
+        <div class="cell" id="dashboard-kpi-4"></div>
+    </div>
+    <div class="row" id="charts-1">
+        <div class="cell" id="dashboard-chart-1"></div>
+        <div class="cell" id="dashboard-chart-2"></div>
+    </div>
+    <div class="row" id="cumulative">
+        <div class="cell" id="dashboard-chart-cumulative"></div>
+    </div>
+</div>
+
+<p class="highcharts-description">
+    This demo shows how to use the Highcharts dashboards to create a project
+    management dashboard. It is based on a few basic components showing the
+    sprint status, the team workload etc. There is also an overview of the
+    project status and a Gantt chart showing individual parts on the timeline.
+</p>
+
+<script src="./demo.js"></script>
+</body>
+</html>
