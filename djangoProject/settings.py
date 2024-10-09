@@ -14,14 +14,13 @@ import dj_database_url
 import djangoProject.db as db
 from pathlib import Path
 from environ import Env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = Env()
 env.read_env(BASE_DIR / '.env')  # Asegúrate de que BASE_DIR esté definido antes
 
 ENVIRONMENT = env('ENVIRONMENT', default='production')
-
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -33,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.122.38', '192.168.1.130', 'localhost', '127.0.0.1', 'uv-check.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://uv-check.up.railway.app/']
@@ -92,7 +91,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASES = {
-    'default':{
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -136,7 +135,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
