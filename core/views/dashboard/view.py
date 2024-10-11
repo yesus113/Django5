@@ -27,7 +27,7 @@ class DashboardView(TemplateView):
                 data = self.Report_dht11_months()
             elif action == 'get_graph_online':
                 last_record = SensorData.objects.latest('id')  # Obtener el último registro
-                data = {'y': last_record.temperature}  # Enviar la temperatura del último registro
+                data = {'y': last_record.temperature, 'h': last_record.humidity}  # Enviar la temperatura del último registro
                 print(data)
             else:
                 data['error'] = 'Ha ocurrido un error'
