@@ -36,14 +36,17 @@ class SensorDataView(View):
         # Determina si encender o apagar el LED
         if action == 'turn_on':
             value = 1
+            command = 'turn_on_led'
         elif action == 'turn_off':
             value = 0
+            command = 'turn_off_led'
         else:
             value = 0  # Valor por defecto o manejar error
+            command = 'Accion invalida'
 
         # Enviar comando para encender o apagar el LED
         data_to_send = {
-            "command": "turn_on_led",
+            "command": command,
             "value": value
         }
         return JsonResponse(data_to_send, status=200)
@@ -53,10 +56,19 @@ class LedControlView(View):
     template_name = 'sensores/LED.html'
 
     def get(self, request):
-        # Renderiza el template para el control del LED
+        # Obtener el estado actual del LED desde alguna fuente (ejemplo: variable o base de datos)
+        action = request.GET.get('action')
+        if action == 'turn_on':
+            led_status = 'Encendido'
+        elif action == 'turn_off':
+            led_status = 'Apagado'
+        else:
+            led_status = 'Desconocido'  # Valor por defecto si no se envía acción
+
+        # Renderiza el template con el estado del LED
         context = {
             'title': 'Control de LED',
-            'led_status': None  # Puedes definirlo según el estado inicial del LED
+            'led_status': led_status  # Aquí se almacena el estado actual del LED
         }
         return render(request, self.template_name, context)
 
