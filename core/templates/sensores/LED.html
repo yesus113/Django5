@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Estado del LED: {{ led_status }}</p>
+
+    <form method="GET" action="{% url 'core:sensor-data' %}">
+        <button type="submit" name="action" value="turn_on">Encender LED</button>
+        <button type="submit" name="action" value="turn_off">Apagar LED</button>
+    </form>
+</body>
+</html>

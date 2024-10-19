@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView
@@ -8,8 +9,11 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
+
 @method_decorator(csrf_exempt, name='dispatch')
 class SensorDataView(View):
+    template_name = 'sensores/LED.html'
+
     def post(self, request):
         try:
             data = json.loads(request.body)
@@ -27,12 +31,35 @@ class SensorDataView(View):
             return JsonResponse({"error": str(e)}, status=500)
 
     def get(self, request):
-        # Enviar comando para encender el LED (value: 1) o apagarlo (value: 0)
+        action = request.GET.get('action')  # Obtén el valor del botón presionado
+
+        # Determina si encender o apagar el LED
+        if action == 'turn_on':
+            value = 1
+        elif action == 'turn_off':
+            value = 0
+        else:
+            value = 0  # Valor por defecto o manejar error
+
+        # Enviar comando para encender o apagar el LED
         data_to_send = {
             "command": "turn_on_led",
-            "value": 1  # Cambia a 0 para apagar el LED
+            "value": value
         }
         return JsonResponse(data_to_send, status=200)
+
+
+class LedControlView(View):
+    template_name = 'sensores/LED.html'
+
+    def get(self, request):
+        # Renderiza el template para el control del LED
+        context = {
+            'title': 'Control de LED',
+            'led_status': None  # Puedes definirlo según el estado inicial del LED
+        }
+        return render(request, self.template_name, context)
+
 
 class SensoresListView(ListView):
     model = SensorData
@@ -62,7 +89,7 @@ class SensoresListView(ListView):
         context['title'] = 'Sensor DHT11'
         context['grafica_url'] = reverse_lazy('core:dashboard')
         context['list_url'] = reverse_lazy('core:category_list')
+        context['api_url'] = reverse_lazy('core:sensor-data')
         context['entity'] = 'Sensor'
         return context
     # Nuevo endpoint para controlar el ESP32
-
