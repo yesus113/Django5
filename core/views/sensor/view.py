@@ -26,6 +26,14 @@ class SensorDataView(View):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
 
+    def get(self, request):
+        # Enviar comando para encender el LED (value: 1) o apagarlo (value: 0)
+        data_to_send = {
+            "command": "turn_on_led",
+            "value": 1  # Cambia a 0 para apagar el LED
+        }
+        return JsonResponse(data_to_send, status=200)
+
 class SensoresListView(ListView):
     model = SensorData
     template_name = 'sensores/dht11.html'
@@ -56,3 +64,5 @@ class SensoresListView(ListView):
         context['list_url'] = reverse_lazy('core:category_list')
         context['entity'] = 'Sensor'
         return context
+    # Nuevo endpoint para controlar el ESP32
+
