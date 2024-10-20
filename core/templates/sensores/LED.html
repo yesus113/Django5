@@ -8,9 +8,10 @@
     <h1>{{ title }}</h1>
     <p>Estado del LED: {{ led_status }}</p>
 
-    <form method="GET" action="{% url 'core:sensor_control' %}">  <!-- Asegúrate de que la URL sea correcta -->
-        <button type="submit" name="action" value="turn_on">Encender LED</button>
-        <button type="submit" name="action" value="turn_off">Apagar LED</button>
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <button type="submit" name="action" value="1">Encender LED</button>
+        <button type="submit" name="action" value="0">Apagar LED</button>
     </form>
 </body>
 </html>

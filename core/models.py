@@ -138,3 +138,11 @@ class SensorData(models.Model):
         # Convierte datetime a un formato legible (ISO)
         item['datetime'] = self.datetime.isoformat()  # O puedes usar str(self.datetime) si prefieres
         return item
+class LedControl(models.Model):
+    estado = models.DecimalField(default=0, max_digits=1, decimal_places=0)
+
+    def __str__(self):
+        return f"Estado: {self.estado}"
+    def toJSON(self):
+        item = model_to_dict(self)
+        return item

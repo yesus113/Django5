@@ -16,6 +16,9 @@ urlpatterns = [
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
     #Sensores
     path('api/sensor-data', SensorDataView.as_view(), name='sensor-data'),
-    path('sensores/LED', LedControlView.as_view(), name='sensor_control'),
     path('sensores/list/', SensoresListView.as_view(), name='sensores_list'),
+    path('led/', ControllerLedUpdateView.as_view(), name='led_control'),
+    path('led/status/', LedStatusView.as_view(), name='led_status'),
 ]
+
+

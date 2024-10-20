@@ -1,10 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import ListView
-from core.models import SensorData
+from django.views.generic import ListView, FormView, UpdateView
+
+from core.forms import CategoryForm
+from core.models import SensorData, LedControl
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
@@ -29,37 +31,51 @@ class SensorDataView(View):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
 
-    def get(self, request):
-        led_status = request.session.get('led_status', 'Desconocido')  # Accede a la sesión
-        return JsonResponse({"led_status": led_status})
 
-
-class LedControlView(View):
+class ControllerLedFormView(FormView):
+    form_class = CategoryForm
     template_name = 'sensores/LED.html'
 
-    def get(self, request):
-        # Obtener el estado actual del LED desde la sesión, valor por defecto 'Desconocido'
-        led_status = request.session.get('led_status', 'Desconocido')
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
-        action = request.GET.get('action')
-        print(f"Acción recibida: {action}")  # Depuración
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
-        # Actualiza el estado del LED y guarda en la sesión
-        if action == 'turn_on':
-            led_status = 'Encendido'
-            request.session['led_status'] = led_status  # Guardar en sesión
-            print("LED encendido")  # Depuración
-        elif action == 'turn_off':
-            led_status = 'Apagado'
-            request.session['led_status'] = led_status  # Guardar en sesión
-            print("LED apagado")  # Depuración
 
-        # Renderiza el template con el estado del LED
+class ControllerLedUpdateView(View):
+    template_name = 'sensores/LED.html'
+    model = LedControl
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        # Obtener el registro del LED, puedes usar un ID específico o el primer registro
+        led = get_object_or_404(LedControl, id=1)  # Cambia el ID según tu diseño
+
+        # Pasar el estado actual del LED al contexto
         context = {
-            'title': 'Control de LED',
-            'led_status': led_status  # Usa el estado de la sesión
+            'title': 'Controlador LED',
+            'led_status': 'Encendido' if led.estado == 1 else 'Apagado',
         }
         return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        # Obtener el registro del LED, puedes usar un ID específico o el primer registro
+        led = get_object_or_404(LedControl, id=1)
+
+        # Procesar la acción enviada desde el formulario
+        action = request.POST.get('action')
+        if action is not None:
+            led.estado = 1 if action == '1' else 0  # Actualiza el estado
+            led.save()  # Guardar el nuevo estado en la base de datos
+
+        # Redirigir a la misma página para mostrar el nuevo estado
+        return redirect('core:led_control')
 
 
 class SensoresListView(ListView):
@@ -94,3 +110,14 @@ class SensoresListView(ListView):
         context['entity'] = 'Sensor'
         return context
     # Nuevo endpoint para controlar el ESP32
+
+class LedStatusView(View):
+    def get(self, request, *args, **kwargs):
+        # Obtener el registro del LED, puedes usar el ID o el primer registro
+        led = get_object_or_404(LedControl, id=1)  # Cambia el ID según tu diseño
+
+        # Devolver el estado en formato JSON
+        data = {
+            'estado': led.estado,  # Devolver el estado del LED (1 para encendido, 0 para apagado)
+        }
+        return JsonResponse(data)
