@@ -12,7 +12,6 @@ from django.utils.decorators import method_decorator
 
 @method_decorator(csrf_exempt, name='dispatch')
 class SensorDataView(View):
-    template_name = 'sensores/LED.html'
 
     def post(self, request):
         try:
@@ -31,26 +30,29 @@ class SensorDataView(View):
             return JsonResponse({"error": str(e)}, status=500)
 
     def get(self, request):
-        led_status = LedControlView.led_status
-        return JsonResponse({"led_status": led_status}, status=200)
+        led_status = request.session.get('led_status', 'Desconocido')  # Accede a la sesión
+        return JsonResponse({"led_status": led_status})
 
 
 class LedControlView(View):
     template_name = 'sensores/LED.html'
 
     def get(self, request):
-        # Obtener el estado actual del LED desde la sesión, valor por defecto 'Apagado'
-        led_status = request.session.get('led_status', 'Apagado')
+        # Obtener el estado actual del LED desde la sesión, valor por defecto 'Desconocido'
+        led_status = request.session.get('led_status', 'Desconocido')
 
         action = request.GET.get('action')
+        print(f"Acción recibida: {action}")  # Depuración
 
         # Actualiza el estado del LED y guarda en la sesión
         if action == 'turn_on':
             led_status = 'Encendido'
             request.session['led_status'] = led_status  # Guardar en sesión
+            print("LED encendido")  # Depuración
         elif action == 'turn_off':
             led_status = 'Apagado'
             request.session['led_status'] = led_status  # Guardar en sesión
+            print("LED apagado")  # Depuración
 
         # Renderiza el template con el estado del LED
         context = {
