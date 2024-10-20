@@ -33,22 +33,27 @@ class SensorDataView(View):
     def get(self, request):
         action = request.GET.get('action')  # Obtén el valor del botón presionado
 
+        # Verifica que la acción exista
+        if action is None:
+            return JsonResponse({"command": "Acción no recibida", "value": 0}, status=400)
+
         # Determina si encender o apagar el LED
         if action == 'turn_on':
             value = 1
-            command = 'turn_on_led'
+            command = "turn_on_led"  # Comando para encender el LED
         elif action == 'turn_off':
             value = 0
-            command = 'turn_off_led'
+            command = "turn_off_led"  # Comando para apagar el LED
         else:
-            value = 0  # Valor por defecto o manejar error
-            command = 'Accion invalida'
+            value = 0
+            command = "Accion invalida"  # Acción inválida
 
         # Enviar comando para encender o apagar el LED
         data_to_send = {
-            "command": command,
+            "command": command,  # Cambia el comando según la acción
             "value": value
         }
+
         return JsonResponse(data_to_send, status=200)
 
 
