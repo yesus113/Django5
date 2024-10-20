@@ -31,49 +31,31 @@ class SensorDataView(View):
             return JsonResponse({"error": str(e)}, status=500)
 
     def get(self, request):
-        action = request.GET.get('action')  # Obtén el valor del botón presionado
-
-        # Verifica que la acción exista
-        if action is None:
-            return JsonResponse({"command": "Acción no recibida", "value": 0}, status=400)
-
-        # Determina si encender o apagar el LED
-        if action == 'turn_on':
-            value = 1
-            command = "turn_on_led"  # Comando para encender el LED
-        elif action == 'turn_off':
-            value = 0
-            command = "turn_off_led"  # Comando para apagar el LED
-        else:
-            value = 0
-            command = "Accion invalida"  # Acción inválida
-
-        # Enviar comando para encender o apagar el LED
-        data_to_send = {
-            "command": command,  # Cambia el comando según la acción
-            "value": value
-        }
-
-        return JsonResponse(data_to_send, status=200)
+        led_status = LedControlView.led_status
+        return JsonResponse({"led_status": led_status}, status=200)
 
 
 class LedControlView(View):
     template_name = 'sensores/LED.html'
 
     def get(self, request):
-        # Obtener el estado actual del LED desde alguna fuente (ejemplo: variable o base de datos)
+        # Obtener el estado actual del LED desde la sesión, valor por defecto 'Apagado'
+        led_status = request.session.get('led_status', 'Apagado')
+
         action = request.GET.get('action')
+
+        # Actualiza el estado del LED y guarda en la sesión
         if action == 'turn_on':
             led_status = 'Encendido'
+            request.session['led_status'] = led_status  # Guardar en sesión
         elif action == 'turn_off':
             led_status = 'Apagado'
-        else:
-            led_status = 'Desconocido'  # Valor por defecto si no se envía acción
+            request.session['led_status'] = led_status  # Guardar en sesión
 
         # Renderiza el template con el estado del LED
         context = {
             'title': 'Control de LED',
-            'led_status': led_status  # Aquí se almacena el estado actual del LED
+            'led_status': led_status  # Usa el estado de la sesión
         }
         return render(request, self.template_name, context)
 
